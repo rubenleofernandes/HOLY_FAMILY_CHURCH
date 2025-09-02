@@ -1,0 +1,266 @@
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: white;
+    color: black;
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid grey;
+    box-shadow: 2px 0px 5px grey;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-color: white;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    padding: 10px 15px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.menu a:last-child {
+    background: grey;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Hamburger menu (hidden on desktop) */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Mobile menu hidden by default */
+.menu {
+    display: flex;
+    gap: 10px;
+}
+
+/* Mobile view */
+@media (max-width: 800px) {
+    .hamburger {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 70px; /* below navbar */
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu a {
+        padding: 15px 0;
+        margin: 0;
+        border-top: 1px solid #ddd;
+        text-align: center;
+    }
+}
+
+
+/* Sections */
+section {
+    width: 100%;
+    max-width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+/* Home container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px; /* offset nav */
+}
+
+.left img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.right {
+    max-width: 500px;
+    margin: 20px;
+}
+
+.right h1 {
+    font-size: 28px;
+}
+
+.right p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+button, .menu a:last-child {
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+/* Gallery */
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 15px;
+    margin-top: 20px;
+}
+
+.wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.price {
+    font-size: 14px;
+    margin-top: 5px;
+    color: grey;
+}
+
+/* Timings */
+#Timings h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: grey;
+}
+
+#Timings p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Location */
+#location img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Contact */
+#contact-us h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: grey;
+}
+
+#contact-us p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#contact-us h2 {
+    font-size: 18px;
+    color: black;
+}
+
+/* Footer */
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid grey;
+    padding: 15px 20px;
+    font-size: 14px;
+    background: white;
+    color: grey;
+}
+
+/* Responsive */
+/* Mobile view */
+@media (max-width: 800px) {
+    .hamburger {
+        display: block;
+    }
+
+    .menu {
+        display: none;  /* hidden by default */
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 70px; /* below navbar */
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+        z-index: 9;
+    }
+
+    .menu.active {
+        display: flex; /* only show when active */
+    }
+
+    .menu a {
+        padding: 15px 0;
+        margin: 0;
+        border-top: 1px solid #ddd;
+        text-align: center;
+    }
+
+    /* Keep container column layout */
+    .container {
+        flex-direction: column;
+    }
+
+    .right h1 {
+        font-size: 22px;
+    }
+
+    .right p,
+    #Timings p,
+    #contact-us p {
+        font-size: 14px;
+    }
+
+    #contact-us h2 {
+        font-size: 16px;
+    }
+}
